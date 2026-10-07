@@ -11,7 +11,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch("http://localhost:3000/api/products");
+      const response = await fetch("https://fullstack-i75u.onrender.com/api/products");
       if (!response.ok) {
         throw new Error(`Server returned ${response.status} ${response.statusText}`);
       }
@@ -19,7 +19,7 @@ function App() {
       setProducts(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("Fetch Error:", err);
-      setError("Unable to connect to http://localhost:3000/api/products. Please make sure the backend server is running.");
+      setError("Unable to connect to https://fullstack-i75u.onrender.com/api/products. Please make sure the backend server is running.");
     } finally {
       setLoading(false);
     }
